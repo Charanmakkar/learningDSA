@@ -100,7 +100,6 @@ int main(){
 
     // const int nLine = 10;
     // const int nStarts = 10;
-
     // for(int i = 0; i<=nLine; i++){
     //     for (int j=0; j<=nStarts; j++){
     //         cout << "* ";
@@ -109,12 +108,26 @@ int main(){
     // }
 
 
-    int n3_Sum = 0;
-    int N = 21;
-    for (int i = 1; i<=N; i++){
-        (i%3==0)?n3_Sum+i:;
-    }
-    cout << n3_Sum;
+
+    // // Sum of Numbers divisible by3 in range 1 to N
+    // int n3_Sum = 0;
+    // int N = 6;
+    // for (int i = 1; i<=N; i++){
+    //     if(i%3==0){
+    //         n3_Sum=n3_Sum+i;
+    //     }
+    // }
+    // cout << n3_Sum;
+
+
+
+    // // Print Factorial of N
+    // int N=5;
+    // int fac = 1;
+    // for (int i = 1; i<=N; i++){
+    //     fac *= i;
+    // }
+    // cout << fac;
 
     return 0;
 }
