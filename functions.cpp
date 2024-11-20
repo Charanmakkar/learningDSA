@@ -14,7 +14,7 @@ void sumN(long int input){
 }
 
 int main(){
-    sumN(852085208520);
+    sumN(852085);
 
     return 0;
 }
