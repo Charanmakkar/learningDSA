@@ -153,7 +153,71 @@ int main(){
 
 
 
-   // 04. 
+   // 04. Pyramid
+   /*
+       1
+      121
+     12321
+    1234321
+   */
+  /*
+  int N = 5;
+  for (int i = 0; i<N; i++){
+    // cout << i;
+    for (int j=0; j<(N-i-1); j++){
+        cout << " ";
+    }
+    for (int k=1; k<=i+1; k++){
+        cout << k;
+    }
+    for (int j=i; j>0; j--){
+        cout << j;
+    }
+    cout << endl;
+  }
+    */
+
+
+   // 05. Hollow Daimond
+   /*
+        *
+      *   *
+    *       *
+      *   *
+        * 
+   */
+    // int N = 5;
+    // for (int i= 0; i<(N*2)-1; i++){
+    // }
+
+
+
+
+    // 05. Butterfly pattern
+   /*
+    *      *
+    **    **
+    ***  ***
+    ********
+    ********
+    ***  ***
+    **    **
+    *      *
+   */
+    int N = 4;
+    int W = 8;
+    int l=0, r=0;
+    for (int i= 0; i<N; i++){
+        for (int i= 0; i<N; i++){
+            
+            
+            l++;
+            r--;
+
+        }
+
+
+    }
 
     return 0;
 }
