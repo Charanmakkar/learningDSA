@@ -50,8 +50,8 @@ void printIntersections(int arr1[], int sizeOfArray1, int arr2[], int sizeOfArra
 }
 
 void printUnique(int arr[], int sizeOfArray){
-    for(int i=0; i<sizeOfArray; i++){
-        for(int j=i+1; j<sizeOfArray; j++){
+    for(int i=0; i<=sizeOfArray; i++){
+        for(int j=i+1; j<=sizeOfArray; j++){
             if (arr[i] == arr[j]){
                 break;
             }
@@ -59,6 +59,7 @@ void printUnique(int arr[], int sizeOfArray){
                 cout << arr[i] << " ";
                 break;
             }
+            // cout << arr[i] << endl;
         }
     }
     cout << endl;
@@ -67,14 +68,17 @@ void printUnique(int arr[], int sizeOfArray){
 
 int main(){
 
-    // int arr[] ={20,30,-410,-52,6,5,8,4,8,52,520,52,85,96};
-    int arr[] ={1,2,3,4,5,6};
-    int sizeOfArr = (sizeof(arr) / sizeof(int))-1;
+    int arr[] ={20,30,-410,-52,6,5,8,4,8,52,520,52,85,96};
+    // int arr[] ={1,2,3,4,5,6};
+    int sizeOfArr = (sizeof(arr) / sizeof(int));
+    // cout << sizeOfArr << endl;
 
     int arr1[] = {1,2,3,4,5};
-    int arr2[] = {6,7,3,1};
-    int sizeOfArr1 = (sizeof(arr) / sizeof(int))-1;
-    int sizeOfArr2 = (sizeof(arr) / sizeof(int))-1;
+    int arr2[] = {6,7,3,1,5};
+    int sizeOfArr1 = (sizeof(arr1) / sizeof(int));
+    int sizeOfArr2 = (sizeof(arr2) / sizeof(int));
+    // cout << sizeOfArr1 << endl;
+    // cout << sizeOfArr2 << endl;
 
     // for (int i = 0; i<(sizeof(arr) / sizeof(int)); i++){
     //     cout << arr[i] << " ";    
