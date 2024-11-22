@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <bits/stdc++.h>
 #include<vector>
 
 int linearSearch(vector<int> myVector, int input){
@@ -26,6 +27,8 @@ int revVector(vector<int>& myVector){
 vector<int> pairSumFunc(vector<int> myVector, int target){
     vector<int> ans(2,0);
 
+    sort(myVector.begin(), myVector.end());
+
     // Brute Force approach
     // for(int i=0; i<myVector.size(); i++){
     //     for(int j=i+1; j<myVector.size(); j++){
@@ -41,22 +44,64 @@ vector<int> pairSumFunc(vector<int> myVector, int target){
 
 
     // Kadane's Algorithm
-    int i = 0, j = myVector.size()-1;
-    while(true){
+    int vectorSize = myVector.size();
+    int i = 0, j = vectorSize-1;
+    while(j>0){
         int pairSum = myVector[i]+myVector[j];
-        if (pairSum < target) {i++;}
-        else if (pairSum > target) {j--;}
-        else if (pairSum == target) {
-            ans[0] = i;
-            ans[1] = j;
-            return ans;
+        // cout << pairSum << endl;
+        if (target > 0){
+            if (pairSum < target) {i++;cout << pairSum << endl;}
+            if (pairSum > target) {j--;cout << pairSum << endl;}
+            if (pairSum == target) {cout << pairSum << endl;
+                ans[0] = i;
+                ans[1] = j;
+                return ans;
+            }
+        }
+        else{
+            if (pairSum < target) {j--; cout << pairSum << endl;}
+            if (pairSum > target) {i++; cout << pairSum << endl;}
+            if (pairSum == target) {cout << pairSum << endl;
+                ans[0] = i;
+                ans[1] = j;
+                return ans;
+            }
         }
     }
     return ans;
 }
 
+int majorityElement(vector<int> myVector){
+    sort(myVector.begin(), myVector.end());
+    
+    // Brute Force 
+    
+    for (int i = 0; i<myVector.size(); i++){
+        int freq = 0;
+        for (int val : myVector){
+            if (val == myVector[i]) freq++;
+        }
+        if(freq > myVector.size()/2) return i;
+    }
+
+    // Optamized
+
+
+
+    // Moore's 
+
+
+
+
+    return -1;
+}
+
 
 int main(){
+
+    vector<int> arr1 = {1,2,3,4,5};
+    vector<int> arr2 = {6,7,3,1,5};
+
     vector <int> vec(5,0) ;//= {1,2,3,4,5,6,8,5,4,4};
     vector <int> vec1 = {1,2,3,4,5,6,8,5,4,4};
     vector <char> vec2 = {'a', 'b', 'c','d','e'};
@@ -89,10 +134,16 @@ int main(){
     //     cout << Value << " ";
     // } cout << endl;
 
-    vector<int> myVector = {1,2,3,4,5};
-    int target = 7;
-    vector<int> ans = pairSumFunc(myVector, target);
-    cout << ans[0] << ", " << ans[1] << endl;
+    // vector<int> myVector = {1,2,3,4,5};
+    // vector<int> myVector = {-1,-2,-3,-4,-5};
+    // int target = -6;
+    // vector<int> ans = pairSumFunc(myVector, target);
+    // cout << ans[0] << ", " << ans[1] << endl;
+
+
+    vector<int> myVector = {1,1,1,1,1,12,2,2,2,2,2,2,2,2,55,5};
+    int ans = majorityElement(myVector);
+    cout << ans << endl;
 
     return 0;
 }
