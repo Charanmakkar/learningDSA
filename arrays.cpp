@@ -101,6 +101,23 @@ void printUnique(int arr[], int sizeOfArray){
     cout << endl;
 }
 
+int pairSum(int arr[], int sizeOfArray, int target, int &a, int &b){
+    //Brute Force
+    for(int i=0; i<sizeOfArray; i++){
+        for(int j=i+1; j<sizeOfArray; j++){
+            // cout << arr[i] << " " << arr[j] << endl;
+            if(arr[i]+arr[j] == target){
+                a = i;
+                b = j;
+                return 1;
+            }
+        }
+    }
+    return -1;
+}
+
+
+
 
 int main(){
 
@@ -194,9 +211,18 @@ int main(){
 
     // 08. SUBARRAYS
     // int myArray[] = {1,2,3,4,5};
+    // int myArray[] = {1,2,3,4,5};
+    // int sizeOFmyArray = (sizeof(myArray) / sizeof(int));
+    // cout << maxSubArray(myArray, sizeOFmyArray) << endl;
+
+    // 09. Pair Sum = sum of 2 number equal to target, return index
     int myArray[] = {1,2,3,4,5};
+    int target = 6;
+    int index1 = 0, index2 = 0;
     int sizeOFmyArray = (sizeof(myArray) / sizeof(int));
-    cout << maxSubArray(myArray, sizeOFmyArray) << endl;
+    pairSum(myArray, sizeOFmyArray, target, index1, index2);
+    cout << index1 << " " << index2 << endl;
+
 
 
     return 0;
