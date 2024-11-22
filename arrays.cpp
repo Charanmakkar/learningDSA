@@ -49,6 +49,42 @@ void printIntersections(int arr1[], int sizeOfArray1, int arr2[], int sizeOfArra
     cout << endl;
 }
 
+void printSubArrays(int arr[], int sizeOfArray){
+    for(int i=0; i<sizeOfArray; i++){
+        for(int j=i; j<sizeOfArray; j++){
+            for(int k=i; k<=j; k++){
+                cout << arr[k];
+            }cout << " "; 
+        }            
+        cout << "\n"; 
+    }
+}
+
+int maxSubArray(int arr[], int sizeOfArray){
+
+    // Brute Force Approach
+    // int maxSum = INT32_MIN;
+    // for(int st=0; st<sizeOfArray; st++){
+    //     int currSum = 0;
+    //     for(int en=st; en<sizeOfArray; en++){
+    //         currSum += arr[en];
+    //         maxSum = max(currSum, maxSum);
+    //     }
+    // }
+    // return maxSum;
+
+    // Kadane's Algorithm
+    int currSum = 0, maxSum = INT32_MIN;
+    for (int i = 0; i<sizeOfArray; i++){
+        currSum += arr[i];
+        maxSum = max(currSum, maxSum);
+        if (currSum<0) currSum=0;
+    }
+    return maxSum;
+
+}
+
+
 void printUnique(int arr[], int sizeOfArray){
     for(int i=0; i<=sizeOfArray; i++){
         for(int j=i+1; j<=sizeOfArray; j++){
@@ -146,16 +182,21 @@ int main(){
     // cout << endl;
 
 
-    // 06. Print Unique values in array
-    cout << "Print Unique values in array" << endl;
-    printUnique(arr, sizeOfArr);
+    // // 06. Print Unique values in array
+    // cout << "Print Unique values in array" << endl;
+    // printUnique(arr, sizeOfArr);
 
 
-    // 07. Print intersection of 2 array
-    cout << "Print intersection of 2 array" << endl;
-    printIntersections(arr1, sizeOfArr1, arr2, sizeOfArr2);
+    // // 07. Print intersection of 2 array
+    // cout << "Print intersection of 2 array" << endl;
+    // printIntersections(arr1, sizeOfArr1, arr2, sizeOfArr2);
 
 
+    // 08. SUBARRAYS
+    // int myArray[] = {1,2,3,4,5};
+    int myArray[] = {1,2,3,4,5};
+    int sizeOFmyArray = (sizeof(myArray) / sizeof(int));
+    cout << maxSubArray(myArray, sizeOFmyArray) << endl;
 
 
     return 0;
