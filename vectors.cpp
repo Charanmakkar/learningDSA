@@ -71,29 +71,44 @@ vector<int> pairSumFunc(vector<int> myVector, int target){
     return ans;
 }
 
-int majorityElement(vector<int> myVector){
-    sort(myVector.begin(), myVector.end());
+int majorityElement(vector<int> nums){
+
+    // sort(nums.begin(), nums.end());
     
-    // Brute Force 
-    
-    for (int i = 0; i<myVector.size(); i++){
-        int freq = 0;
-        for (int val : myVector){
-            if (val == myVector[i]) freq++;
-        }
-        if(freq > myVector.size()/2) return i;
+    // // Brute Force 
+    // for (int i = 0; i<nums.size(); i++){
+    //     int freq = 0;
+    //     for (int val : nums){
+    //         if (val == nums[i]) freq++;
+    //     }
+    //     if(freq > nums.size()/2) return i;
+    // }
+
+    // // Optamized
+    // sort(nums.begin(), nums.end());
+    // int freq = 1, ans = nums[0];
+    // for (int i =1; i<nums.size(); i++){
+    //     if (nums[i] == nums[i-1]){
+    //         freq++;
+    //         ans = nums[i];
+    //     }
+    //     else{
+    //         freq = 1;
+    //     }
+    //     if (freq > nums.size()/2) return ans;
+    // }
+
+    // //Moore's Algo
+    int freq=0, ans=0;
+    for (int i=0; i<nums.size(); i++){
+        if (freq==0){ans=nums[i];}
+        if (ans == nums[i]){freq++;}
+        else{freq--;}
+        if (freq > nums.size()/2) return ans;
     }
 
-    // Optamized
 
-
-
-    // Moore's 
-
-
-
-
-    return -1;
+    return ans;
 }
 
 
@@ -140,8 +155,8 @@ int main(){
     // vector<int> ans = pairSumFunc(myVector, target);
     // cout << ans[0] << ", " << ans[1] << endl;
 
-
-    vector<int> myVector = {1,1,1,1,1,12,2,2,2,2,2,2,2,2,55,5};
+    // MAJORITY NUMBER
+    vector<int> myVector = {1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,55,5};
     int ans = majorityElement(myVector);
     cout << ans << endl;
 
