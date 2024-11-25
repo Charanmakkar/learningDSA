@@ -155,10 +155,13 @@ int main(){
     // vector<int> ans = pairSumFunc(myVector, target);
     // cout << ans[0] << ", " << ans[1] << endl;
 
-    // MAJORITY NUMBER
-    vector<int> myVector = {1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,55,5};
-    int ans = majorityElement(myVector);
-    cout << ans << endl;
+    // // MAJORITY NUMBER
+    // vector<int> myVector = {1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,55,5};
+    // int ans = majorityElement(myVector);
+    // cout << ans << endl;
+
+    
+
 
     return 0;
 }
